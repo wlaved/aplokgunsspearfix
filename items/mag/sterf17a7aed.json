@@ -1,0 +1,22 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "trenbankai:glock_mag",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.glock_mag.name"
+      },
+      "minecraft:tags": {
+        "tags": ["is_mag"]
+      },
+      "minecraft:icon": "glock_mag",
+      "minecraft:max_stack_size": 32
+    }
+  }
+}
