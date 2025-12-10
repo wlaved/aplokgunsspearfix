@@ -1,0 +1,1016 @@
+{
+   "content" : [
+      {
+         "path" : "CHANGELOG.md"
+      },
+      {
+         "path" : "CREDITS.md"
+      },
+      {
+         "path" : "LICENSE.md"
+      },
+      {
+         "path" : "NOTICE.md"
+      },
+      {
+         "path" : "animation_controllers/player/ster1ee3ad78.json"
+      },
+      {
+         "path" : "animation_controllers/projectile/sterd55a62b6.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster07fecdfc.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster18ca58a8.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster3fb8cf5a.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster4afee5d4.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster5f095931.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster779315eb.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster84239f25.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster85bcd341.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster8bc18b45.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster95709d58.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster982c6d41.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/ster988f9124.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/sterbb2a2602.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/sterc32e1c45.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/sterc4f0e4bf.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/sterd2fcf5bd.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/stered7b5723.json"
+      },
+      {
+         "path" : "animation_controllers/weapons/sterf6cd6406.json"
+      },
+      {
+         "path" : "animation_controllers/wearable/ster126d0736.json"
+      },
+      {
+         "path" : "animations/throwable/ster5ec0432c.json"
+      },
+      {
+         "path" : "animations/weapons/ster18ca58a8.json"
+      },
+      {
+         "path" : "animations/weapons/ster3fb8cf5a.json"
+      },
+      {
+         "path" : "animations/weapons/ster533b8149.json"
+      },
+      {
+         "path" : "animations/weapons/ster84239f25.json"
+      },
+      {
+         "path" : "animations/weapons/ster85bcd341.json"
+      },
+      {
+         "path" : "animations/weapons/ster95709d58.json"
+      },
+      {
+         "path" : "animations/weapons/ster988f9124.json"
+      },
+      {
+         "path" : "animations/weapons/stera012b6c7.json"
+      },
+      {
+         "path" : "animations/weapons/sterbb2a2602.json"
+      },
+      {
+         "path" : "animations/weapons/sterc32e1c45.json"
+      },
+      {
+         "path" : "animations/weapons/sterc4f0e4bf.json"
+      },
+      {
+         "path" : "animations/weapons/sterd2fcf5bd.json"
+      },
+      {
+         "path" : "animations/weapons/sterf6cd6406.json"
+      },
+      {
+         "path" : "blocks/material/ster0538df04.json"
+      },
+      {
+         "path" : "blocks/material/ster0e90c835.json"
+      },
+      {
+         "path" : "blocks/material/ster26dba8ef.json"
+      },
+      {
+         "path" : "blocks/material/ster6602b525.json"
+      },
+      {
+         "path" : "blocks/material/sterdbd5d49a.json"
+      },
+      {
+         "path" : "blocks/props/container/ster2a8fa106.json"
+      },
+      {
+         "path" : "blocks/props/container/ster45ce2dcc.json"
+      },
+      {
+         "path" : "blocks/props/container/ster81dc2cb4.json"
+      },
+      {
+         "path" : "blocks/props/container/sterd2b0e6f1.json"
+      },
+      {
+         "path" : "blocks/props/hesco/ster31fd3556.json"
+      },
+      {
+         "path" : "blocks/props/hesco/sterc33cc63b.json"
+      },
+      {
+         "path" : "blocks/props/hesco/stere75d2099.json"
+      },
+      {
+         "path" : "blocks/props/ster05a9a12d.json"
+      },
+      {
+         "path" : "blocks/props/ster185fa45c.json"
+      },
+      {
+         "path" : "blocks/props/ster1894d3bc.json"
+      },
+      {
+         "path" : "blocks/props/ster18d800d1.json"
+      },
+      {
+         "path" : "blocks/props/ster1c5f1dfc.json"
+      },
+      {
+         "path" : "blocks/props/ster2bc1f746.json"
+      },
+      {
+         "path" : "blocks/props/ster78593ff4.json"
+      },
+      {
+         "path" : "blocks/props/ster8cf0e087.json"
+      },
+      {
+         "path" : "blocks/props/stera4457db4.json"
+      },
+      {
+         "path" : "blocks/props/stere2cbeb55.json"
+      },
+      {
+         "path" : "blocks/props/sterf06e03fa.json"
+      },
+      {
+         "path" : "blocks/vfx/sterbea8e3ad.json"
+      },
+      {
+         "path" : "blocks/workbench/ster60bc4dc6.json"
+      },
+      {
+         "path" : "blocks/workbench/stera30d8482.json"
+      },
+      {
+         "path" : "blocks/workbench/sterf0810cac.json"
+      },
+      {
+         "path" : "contents.json"
+      },
+      {
+         "path" : "entities/projectile/ster77df983a.json"
+      },
+      {
+         "path" : "entities/projectile/sterd55a62b6.json"
+      },
+      {
+         "path" : "entities/throwable/ster3d9ef788.json"
+      },
+      {
+         "path" : "entities/throwable/ster74c674aa.json"
+      },
+      {
+         "path" : "entities/throwable/ster8c58521d.json"
+      },
+      {
+         "path" : "entities/throwable/sterb624983b.json"
+      },
+      {
+         "path" : "feature_rules/ore/aluminum_ore.json"
+      },
+      {
+         "path" : "features/aluminum_ore.json"
+      },
+      {
+         "path" : "functions/dev/a_lot_of_zombies.mcfunction"
+      },
+      {
+         "path" : "functions/dev/cam_off.mcfunction"
+      },
+      {
+         "path" : "functions/dev/cam_on.mcfunction"
+      },
+      {
+         "path" : "functions/effect/explosion.mcfunction"
+      },
+      {
+         "path" : "functions/effect/shot_light.mcfunction"
+      },
+      {
+         "path" : "functions/effect/weapon_dryfire.mcfunction"
+      },
+      {
+         "path" : "functions/player/lean.mcfunction"
+      },
+      {
+         "path" : "functions/player/locked_in.mcfunction"
+      },
+      {
+         "path" : "functions/tick.json"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/ak12.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/ak47.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/ak74.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/akm.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/aks74u.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/awp.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/deagle.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/display.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/fnfal.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/glock17.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/glock18.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/m1014.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/m249.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/m4a1.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/mossberg.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/mp5a5.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/parafal.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/bullet_counter/rpg7.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/ak12.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/ak47.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/ak74.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/akm.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/aks74u.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/awp.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/deagle.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/fnfal.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/glock17.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/glock18.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/m1014.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/m249.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/m4a1.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/mossberg.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/mp5a5.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/parafal.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/fire/rpg7.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/ak12.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/ak47.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/ak74.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/akm.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/aks74u.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/awp.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/deagle.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/fnfal.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/glock17.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/glock18.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/m1014.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/m249.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/m4a1.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/mossberg.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/mp5a5.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/parafal.mcfunction"
+      },
+      {
+         "path" : "functions/weapons/reload/rpg7.mcfunction"
+      },
+      {
+         "path" : "item_catalog/crafting_item_catalog.json"
+      },
+      {
+         "path" : "items/attachment/ster0cff97c0.json"
+      },
+      {
+         "path" : "items/attachment/ster3729cee1.json"
+      },
+      {
+         "path" : "items/attachment/ster39befec6.json"
+      },
+      {
+         "path" : "items/attachment/ster3ef71779.json"
+      },
+      {
+         "path" : "items/attachment/ster697c534a.json"
+      },
+      {
+         "path" : "items/attachment/ster94b8e135.json"
+      },
+      {
+         "path" : "items/attachment/sterafedfd42.json"
+      },
+      {
+         "path" : "items/attachment/sterb0988935.json"
+      },
+      {
+         "path" : "items/attachment/sterb8756907.json"
+      },
+      {
+         "path" : "items/attachment/sterc3cc98f5.json"
+      },
+      {
+         "path" : "items/blueprint/ster2c9b805f.json"
+      },
+      {
+         "path" : "items/blueprint/ster888c5e81.json"
+      },
+      {
+         "path" : "items/food/ster93f4011c.json"
+      },
+      {
+         "path" : "items/mag/ster0602c6e6.json"
+      },
+      {
+         "path" : "items/mag/ster09128d40.json"
+      },
+      {
+         "path" : "items/mag/ster1073499a.json"
+      },
+      {
+         "path" : "items/mag/ster26c0034b.json"
+      },
+      {
+         "path" : "items/mag/ster5481f29a.json"
+      },
+      {
+         "path" : "items/mag/ster680ee6f3.json"
+      },
+      {
+         "path" : "items/mag/stera0139352.json"
+      },
+      {
+         "path" : "items/mag/stera2eac3fe.json"
+      },
+      {
+         "path" : "items/mag/stera98110f0.json"
+      },
+      {
+         "path" : "items/mag/sterb9f234f2.json"
+      },
+      {
+         "path" : "items/mag/stere6717e31.json"
+      },
+      {
+         "path" : "items/mag/sterf17a7aed.json"
+      },
+      {
+         "path" : "items/mag/sterfd92eeba.json"
+      },
+      {
+         "path" : "items/material/ster3597b8f8.json"
+      },
+      {
+         "path" : "items/material/ster3770e85b.json"
+      },
+      {
+         "path" : "items/material/ster39a5b829.json"
+      },
+      {
+         "path" : "items/material/ster50813915.json"
+      },
+      {
+         "path" : "items/material/ster66f822ab.json"
+      },
+      {
+         "path" : "items/material/ster81b9b4f2.json"
+      },
+      {
+         "path" : "items/material/ster996234e4.json"
+      },
+      {
+         "path" : "items/material/stera2c9e3dd.json"
+      },
+      {
+         "path" : "items/material/sterba4b57a8.json"
+      },
+      {
+         "path" : "items/material/stere05dee14.json"
+      },
+      {
+         "path" : "items/material/stere9b096de.json"
+      },
+      {
+         "path" : "items/material/sterfc05224d.json"
+      },
+      {
+         "path" : "items/other/ster0128388b.json"
+      },
+      {
+         "path" : "items/other/ster8499e53a.json"
+      },
+      {
+         "path" : "items/part/ster03670fd1.json"
+      },
+      {
+         "path" : "items/part/ster05151208.json"
+      },
+      {
+         "path" : "items/part/ster1913cf1f.json"
+      },
+      {
+         "path" : "items/part/ster2618e04c.json"
+      },
+      {
+         "path" : "items/part/ster62ba45e0.json"
+      },
+      {
+         "path" : "items/part/ster75ae55a9.json"
+      },
+      {
+         "path" : "items/part/sterb8654cbb.json"
+      },
+      {
+         "path" : "items/part/sterca88a450.json"
+      },
+      {
+         "path" : "items/part/stercd887ad5.json"
+      },
+      {
+         "path" : "items/part/sterf99a3924.json"
+      },
+      {
+         "path" : "items/props/stere2cbeb55.json"
+      },
+      {
+         "path" : "items/throwable/ster3d9ef788.json"
+      },
+      {
+         "path" : "items/throwable/ster74c674aa.json"
+      },
+      {
+         "path" : "items/throwable/ster8c58521d.json"
+      },
+      {
+         "path" : "items/throwable/sterb624983b.json"
+      },
+      {
+         "path" : "items/weapons/ster07fecdfc.json"
+      },
+      {
+         "path" : "items/weapons/ster18ca58a8.json"
+      },
+      {
+         "path" : "items/weapons/ster3fb8cf5a.json"
+      },
+      {
+         "path" : "items/weapons/ster4afee5d4.json"
+      },
+      {
+         "path" : "items/weapons/ster5f095931.json"
+      },
+      {
+         "path" : "items/weapons/ster779315eb.json"
+      },
+      {
+         "path" : "items/weapons/ster84239f25.json"
+      },
+      {
+         "path" : "items/weapons/ster85bcd341.json"
+      },
+      {
+         "path" : "items/weapons/ster8bc18b45.json"
+      },
+      {
+         "path" : "items/weapons/ster95709d58.json"
+      },
+      {
+         "path" : "items/weapons/ster988f9124.json"
+      },
+      {
+         "path" : "items/weapons/sterbb2a2602.json"
+      },
+      {
+         "path" : "items/weapons/sterc32e1c45.json"
+      },
+      {
+         "path" : "items/weapons/sterc4f0e4bf.json"
+      },
+      {
+         "path" : "items/weapons/sterd2fcf5bd.json"
+      },
+      {
+         "path" : "items/weapons/stered7b5723.json"
+      },
+      {
+         "path" : "items/weapons/sterf6cd6406.json"
+      },
+      {
+         "path" : "items/wearable/ster01296d03.json"
+      },
+      {
+         "path" : "items/wearable/ster126d0736.json"
+      },
+      {
+         "path" : "items/wearable/ster2b460956.json"
+      },
+      {
+         "path" : "items/wearable/ster38b73a50.json"
+      },
+      {
+         "path" : "items/wearable/ster3bfec87f.json"
+      },
+      {
+         "path" : "items/wearable/ster5f916971.json"
+      },
+      {
+         "path" : "items/wearable/ster73aaad25.json"
+      },
+      {
+         "path" : "items/wearable/ster9f00775a.json"
+      },
+      {
+         "path" : "items/wearable/stercab21a96.json"
+      },
+      {
+         "path" : "items/wearable/sterccf0a03f.json"
+      },
+      {
+         "path" : "loot_tables/blocks/props/landmine.json"
+      },
+      {
+         "path" : "loot_tables/blocks/props/sandbag.json"
+      },
+      {
+         "path" : "loot_tables/blocks/props/sandbag_double.json"
+      },
+      {
+         "path" : "manifest.json"
+      },
+      {
+         "path" : "pack_icon.png"
+      },
+      {
+         "path" : "recipes/blocks/props/ster05a9a12d.json"
+      },
+      {
+         "path" : "recipes/blocks/props/ster1894d3bc.json"
+      },
+      {
+         "path" : "recipes/blocks/props/ster1c5f1dfc.json"
+      },
+      {
+         "path" : "recipes/blocks/props/stera4457db4.json"
+      },
+      {
+         "path" : "recipes/blocks/props/stercd9b7abd.json"
+      },
+      {
+         "path" : "recipes/blocks/props/stere2cbeb55.json"
+      },
+      {
+         "path" : "recipes/blocks/workbench/ster60bc4dc6.json"
+      },
+      {
+         "path" : "recipes/blocks/workbench/stera30d8482.json"
+      },
+      {
+         "path" : "recipes/blocks/workbench/sterf0810cac.json"
+      },
+      {
+         "path" : "recipes/items/attachment/ster0cff97c0.json"
+      },
+      {
+         "path" : "recipes/items/attachment/ster3729cee1.json"
+      },
+      {
+         "path" : "recipes/items/attachment/ster39befec6.json"
+      },
+      {
+         "path" : "recipes/items/attachment/ster3ef71779.json"
+      },
+      {
+         "path" : "recipes/items/attachment/ster697c534a.json"
+      },
+      {
+         "path" : "recipes/items/attachment/ster94b8e135.json"
+      },
+      {
+         "path" : "recipes/items/attachment/sterafedfd42.json"
+      },
+      {
+         "path" : "recipes/items/attachment/sterb0988935.json"
+      },
+      {
+         "path" : "recipes/items/attachment/sterb8756907.json"
+      },
+      {
+         "path" : "recipes/items/attachment/sterc3cc98f5.json"
+      },
+      {
+         "path" : "recipes/items/blueprint/ster2c9b805f.json"
+      },
+      {
+         "path" : "recipes/items/food/sterd00f1929.json"
+      },
+      {
+         "path" : "recipes/items/material/ster0538df04.json"
+      },
+      {
+         "path" : "recipes/items/material/ster0b4ec42d.json"
+      },
+      {
+         "path" : "recipes/items/material/ster26dba8ef.json"
+      },
+      {
+         "path" : "recipes/items/material/ster3597b8f8.json"
+      },
+      {
+         "path" : "recipes/items/material/ster3770e85b.json"
+      },
+      {
+         "path" : "recipes/items/material/ster39a5b829.json"
+      },
+      {
+         "path" : "recipes/items/material/ster3bbb5654.json"
+      },
+      {
+         "path" : "recipes/items/material/ster3f29acc7.json"
+      },
+      {
+         "path" : "recipes/items/material/ster4f76cd5f.json"
+      },
+      {
+         "path" : "recipes/items/material/ster50813915.json"
+      },
+      {
+         "path" : "recipes/items/material/ster6602b525.json"
+      },
+      {
+         "path" : "recipes/items/material/ster66f822ab.json"
+      },
+      {
+         "path" : "recipes/items/material/ster81b9b4f2.json"
+      },
+      {
+         "path" : "recipes/items/material/stera2c9e3dd.json"
+      },
+      {
+         "path" : "recipes/items/material/stera98db788.json"
+      },
+      {
+         "path" : "recipes/items/material/sterb9bf3c45.json"
+      },
+      {
+         "path" : "recipes/items/material/sterba4b57a8.json"
+      },
+      {
+         "path" : "recipes/items/material/sterd429cb29.json"
+      },
+      {
+         "path" : "recipes/items/material/stere83bd342.json"
+      },
+      {
+         "path" : "recipes/items/material/stere9b096de.json"
+      },
+      {
+         "path" : "recipes/items/material/sterf4ea4067.json"
+      },
+      {
+         "path" : "recipes/items/material/sterfb29e040.json"
+      },
+      {
+         "path" : "recipes/items/material/sterfc05224d.json"
+      },
+      {
+         "path" : "recipes/items/part/ster03670fd1.json"
+      },
+      {
+         "path" : "recipes/items/part/ster05151208.json"
+      },
+      {
+         "path" : "recipes/items/part/ster1913cf1f.json"
+      },
+      {
+         "path" : "recipes/items/part/ster2618e04c.json"
+      },
+      {
+         "path" : "recipes/items/part/ster62ba45e0.json"
+      },
+      {
+         "path" : "recipes/items/part/ster75ae55a9.json"
+      },
+      {
+         "path" : "recipes/items/part/sterb8654cbb.json"
+      },
+      {
+         "path" : "recipes/items/part/sterca88a450.json"
+      },
+      {
+         "path" : "recipes/items/part/stercd887ad5.json"
+      },
+      {
+         "path" : "recipes/items/part/sterf99a3924.json"
+      },
+      {
+         "path" : "recipes/items/throwable/ster3d9ef788.json"
+      },
+      {
+         "path" : "recipes/items/throwable/ster74c674aa.json"
+      },
+      {
+         "path" : "recipes/items/throwable/ster8c58521d.json"
+      },
+      {
+         "path" : "recipes/items/throwable/sterb624983b.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster07fecdfc.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster18ca58a8.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster3fb8cf5a.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster4afee5d4.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster5f095931.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster779315eb.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster84239f25.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster85bcd341.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster8bc18b45.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster95709d58.json"
+      },
+      {
+         "path" : "recipes/items/weapons/ster988f9124.json"
+      },
+      {
+         "path" : "recipes/items/weapons/sterbb2a2602.json"
+      },
+      {
+         "path" : "recipes/items/weapons/sterc32e1c45.json"
+      },
+      {
+         "path" : "recipes/items/weapons/sterc4f0e4bf.json"
+      },
+      {
+         "path" : "recipes/items/weapons/sterd2fcf5bd.json"
+      },
+      {
+         "path" : "recipes/items/weapons/stered7b5723.json"
+      },
+      {
+         "path" : "recipes/items/weapons/sterf6cd6406.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster01296d03.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster126d0736.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster2b460956.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster38b73a50.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster3bfec87f.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster5f916971.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster73aaad25.json"
+      },
+      {
+         "path" : "recipes/items/wearable/ster9f00775a.json"
+      },
+      {
+         "path" : "recipes/items/wearable/stercab21a96.json"
+      },
+      {
+         "path" : "recipes/items/wearable/sterccf0a03f.json"
+      },
+      {
+         "path" : "scripts/main.js"
+      },
+      {
+         "path" : "scripts/main/components/blocks/props.js"
+      },
+      {
+         "path" : "scripts/main/components/blocks/vfx.js"
+      },
+      {
+         "path" : "scripts/main/components/main.js"
+      },
+      {
+         "path" : "scripts/main/modules/bullet-projectile.js"
+      },
+      {
+         "path" : "scripts/main/modules/core.js"
+      },
+      {
+         "path" : "scripts/main/modules/lore.js"
+      },
+      {
+         "path" : "scripts/main/modules/player-join.js"
+      },
+      {
+         "path" : "scripts/main/modules/scripting.js"
+      },
+      {
+         "path" : "scripts/main/modules/weapons.js"
+      },
+      {
+         "path" : "scripts/main/util/ammo.js"
+      },
+      {
+         "path" : "scripts/main/util/attachments.js"
+      },
+      {
+         "path" : "scripts/main/util/calculation.js"
+      },
+      {
+         "path" : "scripts/main/util/const.js"
+      },
+      {
+         "path" : "scripts/main/util/data.js"
+      },
+      {
+         "path" : "scripts/main/util/settings.js"
+      },
+      {
+         "path" : "scripts/main/util/types.js"
+      },
+      {
+         "path" : "scripts/main/util/util.js"
+      },
+      {
+         "path" : "scripts/main/util/vector3.js"
+      },
+      {
+         "path" : "scripts/tsconfig.tsbuildinfo"
+      },
+      {
+         "path" : "structures/ground_tallgrass.mcstructure"
+      },
+      {
+         "path" : "structures/military_wall.mcstructure"
+      },
+      {
+         "path" : "structures/military_wall.mcstructure~RF5e7876a.TMP"
+      },
+      {
+         "path" : "subpacks/default/entities/player/player.json"
+      },
+      {
+         "path" : "subpacks/no_nametag/entities/player/player.json"
+      },
+      {
+         "path" : "texts/en_US.lang"
+      },
+      {
+         "path" : "texts/languages.json"
+      },
+      {
+         "path" : "texts/pt_BR.lang"
+      }
+   ],
+   "version" : 1
+}
