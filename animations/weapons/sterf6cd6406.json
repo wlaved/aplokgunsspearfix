@@ -1,0 +1,28 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.player.rpg7_reload": {
+      "animation_length": 3.6,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/playsound weapon.rpg7.begin_reload @a[r=20] ^^^1.5 1 1 0.01",
+          "/camerashake add @s 0.02 0.15 rotational"
+        ],
+        "1.25": [
+          "/playsound weapon.rpg7.insert_round_1 @a[r=20] ^^^1.5 1 1 0.01",
+          "/camerashake add @s 0.02 0.15 rotational"
+        ],
+        "1.9": [
+          "/playsound weapon.rpg7.insert_round_2 @a[r=20] ^^^1.5 1 1 0.01",
+          "/camerashake add @s 0.02 0.15 rotational"
+        ],
+        "2.5833": [
+          "/playsound weapon.rpg7.begin_reload @a[r=20] ^^^1.5 1 1 0.01",
+          "/camerashake add @s 0.02 0.15 rotational"
+        ]
+      }
+    }
+  }
+}
