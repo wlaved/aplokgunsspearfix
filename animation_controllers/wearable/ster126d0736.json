@@ -1,0 +1,29 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.nvg": {
+      "initial_state": "inactive",
+      "states": {
+        "inactive": {
+          "transitions": [
+            {
+              "execute": "q.equipped_item_all_tags('slot.armor.head', 'has_nvg') && q.is_alive"
+            }
+          ]
+        },
+        "execute": {
+          "on_entry": ["/playsound wearable.nvg.toggle @a[r=10] ~~~ 1 1 0.01"],
+          "on_exit": [
+            "/playsound wearable.nvg.toggleoff @a[r=10] ~~~ 1 1 0.01"
+          ],
+          "transitions": [
+            {
+              "inactive": "!q.equipped_item_all_tags('slot.armor.head', 'has_nvg') || !q.is_alive"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
