@@ -9,6 +9,16 @@
       "is_summonable": false,
       "scripts": {
         "animate": [
+          "root",
+          "base_controller",
+          "hud_player_root_controller",
+          "hud_base_controller",
+          "map_controller",
+          "map_player_root_controller",
+          "crossbow_controller",
+          "elytra_flight_controller",
+          "bob",
+          "look_at_target",
           // Weapons
           "weapons_setup_controller",
           // Misc
@@ -18,6 +28,17 @@
         ]
       },
       "animations": {
+        "root": "controller.animation.player.root",
+        "base_controller": "controller.animation.player.base",
+        "hud_player_root_controller": "controller.animation.player.hud.player_root_cockpit",
+        "hud_base_controller": "controller.animation.player.hud.base",
+        "map_controller": "controller.animation.player.map",
+        "map_player_root_controller": "controller.animation.player.hud.map_player_root",
+        "crossbow_controller": "controller.animation.player.crossbow",
+        "crossbow_hold": "animation.player.crossbow_hold",
+        "elytra_flight_controller": "controller.animation.player.elytra_flight",
+        "bob": "animation.player.bob",
+        "look_at_target": "animation.common.look_at_target",
         // Weapons
         "weapons_vars_controller": "controller.animation.player.weapons_vars",
         "weapons_setup_controller": "controller.animation.player.weapons_setup",
