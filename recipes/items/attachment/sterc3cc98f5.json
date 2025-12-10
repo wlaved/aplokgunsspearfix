@@ -1,0 +1,30 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "trenbankai:scope_hp"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["B B", " A ", "C C"],
+    "key": {
+      "A": {
+        "item": "trenbankai:scope_lp"
+      },
+      "B": {
+        "item": "trenbankai:gunmetal_ingot"
+      },
+      "C": {
+        "item": "trenbankai:plastic_mass"
+      }
+    },
+    "unlock": [
+      {
+        "item": "trenbankai:scope_lp"
+      }
+    ],
+    "result": {
+      "item": "trenbankai:scope_hp"
+    }
+  }
+}

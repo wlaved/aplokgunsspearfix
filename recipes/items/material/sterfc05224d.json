@@ -1,0 +1,29 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "trenbankai:bucket_petroleum"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": [
+      {
+        "item": "minecraft:bone"
+      },
+      {
+        "item": "minecraft:coal_block"
+      },
+      {
+        "item": "minecraft:bucket"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:bucket"
+      }
+    ],
+    "result": {
+      "item": "trenbankai:bucket_petroleum"
+    }
+  }
+}

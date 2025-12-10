@@ -1,0 +1,29 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "trenbankai:steel_mix"
+    },
+    "tags": ["crafting_table"],
+    "group": "steel_mix",
+    "pattern": ["AAA", "ABA", "AAA"],
+    "key": {
+      "A": {
+        "item": "minecraft:coal"
+      },
+      "B": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "result": {
+      "item": "trenbankai:steel_mix",
+      "count": 6
+    }
+  }
+}

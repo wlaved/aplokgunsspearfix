@@ -1,0 +1,36 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "trenbankai:rpg7"
+    },
+    "tags": ["weapon_workbench"],
+    "pattern": ["A D", " B ", "E C"],
+    "key": {
+      "A": {
+        "item": "trenbankai:barrel_long"
+      },
+      "B": {
+        "item": "trenbankai:grip"
+      },
+      "C": {
+        "item": "trenbankai:stock_rpg7"
+      },
+      "D": {
+        "item": "trenbankai:blueprint_weapons"
+      },
+      "E": {
+        "item": "trenbankai:rpg7_rocket"
+      }
+    },
+    "unlock": [
+      {
+        "item": "trenbankai:rpg7_rocket"
+      }
+    ],
+    "result": {
+      "item": "trenbankai:rpg7"
+    }
+  }
+}

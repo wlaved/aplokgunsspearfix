@@ -1,0 +1,26 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "trenbankai:helmet_6b47_nvg"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": [
+      {
+        "item": "trenbankai:helmet_6b47"
+      },
+      {
+        "item": "trenbankai:nvg"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "trenbankai:nvg"
+      }
+    ],
+    "result": {
+      "item": "trenbankai:helmet_6b47_nvg"
+    }
+  }
+}

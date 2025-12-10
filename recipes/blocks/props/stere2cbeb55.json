@@ -1,0 +1,33 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "trenbankai:landmine"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["ADA", "CBC", "ACA"],
+    "key": {
+      "A": {
+        "item": "trenbankai:steel_ingot"
+      },
+      "B": {
+        "item": "minecraft:redstone"
+      },
+      "C": {
+        "item": "minecraft:gunpowder"
+      },
+      "D": {
+        "item": "trenbankai:plastic_plate"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:gunpowder"
+      }
+    ],
+    "result": {
+      "item": "trenbankai:landmine_item"
+    }
+  }
+}
