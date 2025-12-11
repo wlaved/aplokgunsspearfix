@@ -11,6 +11,12 @@
         "animate": [
           "root",
           "spear_controller",
+          {
+            "brandish_spear": "query.has_item_tag('minecraft:is_spear') && !query.is_using_item"
+          },
+          {
+            "charging_spear": "query.has_item_tag('minecraft:is_spear') && query.is_using_item"
+          },
           // Weapons
           "weapons_setup_controller",
           // Misc
@@ -1026,7 +1032,6 @@
           "trenbankai:wall_detect": 0
         }
       },
-      // Ammo
       "trenbankai:set_ammo_0": {
         "set_property": {
           "trenbankai:ammo": 0
@@ -1082,7 +1087,6 @@
           "trenbankai:ammo": 10
         }
       },
-      // HUD
       "trenbankai:add_hitmark": {
         "queue_command": {
           "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 1"]
