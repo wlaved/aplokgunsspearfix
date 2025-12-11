@@ -7,10 +7,10 @@
         "default": {
           "transitions": [
             {
-              "holding": "(query.has_item_tag('minecraft:is_spear') || query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')) && !query.is_using_item"
+              "holding": "(query.has_item_tag('minecraft:is_spear') || query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:spear') || query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')) && !query.is_using_item"
             },
             {
-              "charging": "(query.has_item_tag('minecraft:is_spear') || query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')) && query.is_using_item"
+              "charging": "(query.has_item_tag('minecraft:is_spear') || query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:spear') || query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')) && query.is_using_item"
             }
           ]
         },
@@ -20,7 +20,7 @@
           ],
           "transitions": [
             {
-              "default": "!query.has_item_tag('minecraft:is_spear') && !query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')"
+              "default": "!query.has_item_tag('minecraft:is_spear') && !query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:spear') && !query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')"
             },
             {
               "charging": "query.is_using_item"
@@ -30,11 +30,12 @@
         "charging": {
           "animations": [
             "charging_spear",
-            "first_person_spear_throw"
+            { "first_person_spear_throw": "variable.is_first_person" },
+            { "third_person_spear_throw": "!variable.is_first_person" }
           ],
           "transitions": [
             {
-              "default": "!query.has_item_tag('minecraft:is_spear') && !query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')"
+              "default": "!query.has_item_tag('minecraft:is_spear') && !query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:spear') && !query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:trident')"
             },
             {
               "holding": "!query.is_using_item"
