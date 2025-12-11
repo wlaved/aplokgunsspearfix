@@ -10,15 +10,7 @@
       "scripts": {
         "animate": [
           "root",
-          {
-            "brandish_spear": "query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') && !query.is_using_item"
-          },
-          {
-            "charging_spear": "!variable.is_first_person && query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') && query.is_using_item"
-          },
-          {
-            "first_person_spear_throw": "variable.is_first_person && query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') && query.is_using_item"
-          },
+          "spear_controller",
           // Weapons
           "weapons_setup_controller",
           // Misc
@@ -40,9 +32,10 @@
         "riding.arms": "animation.player.riding.arms",
         "riding.legs": "animation.player.riding.legs",
         "holding": "animation.player.holding",
+        "spear_controller": "controller.animation.player.spear_logic",
         "brandish_spear": "animation.humanoid.brandish_spear",
         "holding_spyglass": "animation.player.holding_spyglass",
-        "charging_spear": "animation.humanoid.melee_spear_use",
+        "charging_spear": "animation.humanoid.charging_spear",
         "sneaking": "animation.player.sneaking",
         "attack.positions": "animation.player.attack.positions",
         "attack.rotations": "animation.player.attack.rotations",
@@ -79,8 +72,8 @@
         "brushing": "animation.humanoid.brushing",
         "crawling": "animation.player.crawling",
         "crawling.legs": "animation.player.crawling.legs",
-        "first_person_spear_throw": "animation.player.first_person.melee_spear_use",
-        "third_person_spear_throw": "animation.player.attack.trident",
+        "first_person_spear_throw": "animation.player.first_person.spear_throw",
+        "third_person_spear_throw": "animation.player.spear_throw",
         // Weapons
         "weapons_vars_controller": "controller.animation.player.weapons_vars",
         "weapons_setup_controller": "controller.animation.player.weapons_setup",

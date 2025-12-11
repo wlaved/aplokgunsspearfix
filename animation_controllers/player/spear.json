@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.spear_logic": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "holding": "query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') && !query.is_using_item"
+            },
+            {
+              "charging": "query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') && query.is_using_item"
+            }
+          ]
+        },
+        "holding": {
+          "animations": [
+            "brandish_spear"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear')"
+            },
+            {
+              "charging": "query.is_using_item"
+            }
+          ]
+        },
+        "charging": {
+          "animations": [
+            "charging_spear",
+            "first_person_spear_throw"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear')"
+            },
+            {
+              "holding": "!query.is_using_item"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
