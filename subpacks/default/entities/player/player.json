@@ -1,12 +1,12 @@
-/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
 {
-  "format_version": "1.21.0",
+  "format_version": "1.21.130",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:player",
       "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": false,
+      "is_experimental": true,
       "scripts": {
         "animate": [
           "root",
@@ -17,9 +17,13 @@
           {
             "charging_spear": "query.has_item_tag('minecraft:is_spear') && query.is_using_item"
           },
-          // Weapons
+          {
+            "first_person_spear_throw": "variable.is_first_person && query.has_item_tag('minecraft:is_spear') && query.is_using_item"
+          },
+          {
+            "third_person_spear_throw": "!variable.is_first_person && query.has_item_tag('minecraft:is_spear') && query.is_using_item"
+          },
           "weapons_setup_controller",
-          // Misc
           "shield_blocking_controller",
           "grounded_controller",
           "nvg_controller"
@@ -80,7 +84,6 @@
         "crawling.legs": "animation.player.crawling.legs",
         "first_person_spear_throw": "animation.player.first_person.spear_throw",
         "third_person_spear_throw": "animation.player.spear_throw",
-        // Weapons
         "weapons_vars_controller": "controller.animation.player.weapons_vars",
         "weapons_setup_controller": "controller.animation.player.weapons_setup",
         "weapons_bullet_counter_controller": "controller.animation.player.weapons_bullet_counter",
@@ -88,60 +91,43 @@
         "weapons_ads_controller": "controller.animation.player.weapons_ads",
         "weapons_standby_controller": "controller.animation.player.weapons_standby",
         "weapons_standby": "animation.weapons.standby",
-        // AK-12
         "ak12_controller": "controller.animation.player.ak12",
         "ak12_reload_empty": "animation.player.ak12_reload_empty",
         "ak12_reload": "animation.player.ak12_reload",
-        // AK-47
         "ak47_controller": "controller.animation.player.ak47",
         "ak47_reload_empty": "animation.player.ak47_reload_empty",
         "ak47_reload": "animation.player.ak47_reload",
-        // AK-74
         "ak74_controller": "controller.animation.player.ak74",
-        // AKM
         "akm_controller": "controller.animation.player.akm",
-        // AKS-47U
         "aks74u_controller": "controller.animation.player.aks74u",
-        // AWP
         "awp_controller": "controller.animation.player.awp",
         "awp_cycle": "animation.player.awp_cycle",
         "awp_reload_empty": "animation.player.awp_reload_empty",
         "awp_reload": "animation.player.awp_reload",
-        // Desert Eagle
         "deagle_controller": "controller.animation.player.deagle",
         "deagle_reload": "animation.player.deagle_reload",
-        // FN Fal
         "fnfal_controller": "controller.animation.player.fnfal",
         "fnfal_reload_empty": "animation.player.fnfal_reload_empty",
         "fnfal_reload": "animation.player.fnfal_reload",
-        // ParaFAL
         "parafal_controller": "controller.animation.player.parafal",
-        // Glocks
         "glock17_controller": "controller.animation.player.glock17",
         "glock18_controller": "controller.animation.player.glock18",
         "glock_reload_empty": "animation.player.glock_reload_empty",
         "glock_reload": "animation.player.glock_reload",
-        // M249
         "m249_controller": "controller.animation.player.m249",
         "m249_reload": "animation.player.m249_reload",
-        // M4A1
         "m4a1_controller": "controller.animation.player.m4a1",
         "m4a1_reload_empty": "animation.player.m4a1_reload_empty",
         "m4a1_reload": "animation.player.m4a1_reload",
-        // Mossberg 500
         "mossberg_controller": "controller.animation.player.mossberg",
         "mossberg_cycle": "animation.player.mossberg_cycle",
         "mossberg_reload": "animation.player.mossberg_reload",
-        // MP5-A5
         "mp5a5_controller": "controller.animation.player.mp5a5",
         "mp5a5_reload": "animation.player.mp5a5_reload",
-        // RPG-7
         "rpg7_controller": "controller.animation.player.rpg7",
         "rpg7_reload": "animation.player.rpg7_reload",
-        // M1014
         "m1014_controller": "controller.animation.player.m1014",
         "m1014_reload": "animation.player.m1014_reload",
-        // Misc
         "shield_blocking_controller": "controller.animation.player.shield_blocking",
         "grounded_controller": "controller.animation.player.grounded",
         "nvg_controller": "controller.animation.player.nvg"
@@ -732,163 +718,97 @@
           }
         ]
       },
-      // Weapons
       "trenbankai:ak12_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["ak12_fire"]
-            }
-          }
+          { "add": { "component_groups": ["ak12_fire"] } }
         ]
       },
       "trenbankai:ak47_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["ak47_fire"]
-            }
-          }
+          { "add": { "component_groups": ["ak47_fire"] } }
         ]
       },
       "trenbankai:ak74_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["ak74_fire"]
-            }
-          }
+          { "add": { "component_groups": ["ak74_fire"] } }
         ]
       },
       "trenbankai:akm_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["akm_fire"]
-            }
-          }
+          { "add": { "component_groups": ["akm_fire"] } }
         ]
       },
       "trenbankai:aks74u_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["aks74u_fire"]
-            }
-          }
+          { "add": { "component_groups": ["aks74u_fire"] } }
         ]
       },
       "trenbankai:awp_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["awp_fire"]
-            }
-          }
+          { "add": { "component_groups": ["awp_fire"] } }
         ]
       },
       "trenbankai:deagle_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["deagle_fire"]
-            }
-          }
+          { "add": { "component_groups": ["deagle_fire"] } }
         ]
       },
       "trenbankai:fnfal_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["fnfal_fire"]
-            }
-          }
+          { "add": { "component_groups": ["fnfal_fire"] } }
         ]
       },
       "trenbankai:glock_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["glock_fire"]
-            }
-          }
+          { "add": { "component_groups": ["glock_fire"] } }
         ]
       },
       "trenbankai:m249_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["m249_fire"]
-            }
-          }
+          { "add": { "component_groups": ["m249_fire"] } }
         ]
       },
       "trenbankai:m4a1_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["m4a1_fire"]
-            }
-          }
+          { "add": { "component_groups": ["m4a1_fire"] } }
         ]
       },
       "trenbankai:mossberg_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["mossberg_fire"]
-            }
-          }
+          { "add": { "component_groups": ["mossberg_fire"] } }
         ]
       },
       "trenbankai:mp5a5_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["mp5a5_fire"]
-            }
-          }
+          { "add": { "component_groups": ["mp5a5_fire"] } }
         ]
       },
       "trenbankai:rpg7_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["rpg7_fire"]
-            }
-          }
+          { "add": { "component_groups": ["rpg7_fire"] } }
         ]
       },
-      // Misc
       "trenbankai:add_juggernaut": {
-        "remove": {
-          "component_groups": ["default"]
-        },
-        "add": {
-          "component_groups": ["juggernaut"]
-        }
+        "remove": { "component_groups": ["default"] },
+        "add": { "component_groups": ["juggernaut"] }
       },
       "trenbankai:remove_juggernaut": {
-        "remove": {
-          "component_groups": ["juggernaut"]
-        },
-        "add": {
-          "component_groups": ["default"]
-        }
+        "remove": { "component_groups": ["juggernaut"] },
+        "add": { "component_groups": ["default"] }
       },
       "trenbankai:on_death": {
         "queue_command": {
@@ -896,206 +816,73 @@
         }
       },
       "trenbankai:add_underground": {
-        "filters": {
-          "test": "has_tag",
-          "operator": "!=",
-          "value": "underground"
-        },
-        "queue_command": {
-          "command": ["tag @s add underground"]
-        }
+        "filters": { "test": "has_tag", "operator": "!=", "value": "underground" },
+        "queue_command": { "command": ["tag @s add underground"] }
       },
       "trenbankai:remove_underground": {
-        "filters": {
-          "test": "has_tag",
-          "value": "underground"
-        },
-        "queue_command": {
-          "command": ["tag @s remove underground"]
-        }
+        "filters": { "test": "has_tag", "value": "underground" },
+        "queue_command": { "command": ["tag @s remove underground"] }
       },
       "trenbankai:add_sneaking": {
-        "filters": {
-          "test": "has_tag",
-          "operator": "!=",
-          "value": "sneaking"
-        },
-        "queue_command": {
-          "command": ["tag @s add sneaking"]
-        }
+        "filters": { "test": "has_tag", "operator": "!=", "value": "sneaking" },
+        "queue_command": { "command": ["tag @s add sneaking"] }
       },
       "trenbankai:remove_sneaking": {
-        "filters": {
-          "test": "has_tag",
-          "value": "sneaking"
-        },
-        "queue_command": {
-          "command": ["tag @s remove sneaking"]
-        }
+        "filters": { "test": "has_tag", "value": "sneaking" },
+        "queue_command": { "command": ["tag @s remove sneaking"] }
       },
       "trenbankai:add_reload_empty": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:reload",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:reload": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:reload", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:reload": 1 }
       },
       "trenbankai:add_reload": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:reload",
-          "operator": "!=",
-          "value": 2
-        },
-        "set_property": {
-          "trenbankai:reload": 2
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:reload", "operator": "!=", "value": 2 },
+        "set_property": { "trenbankai:reload": 2 }
       },
       "trenbankai:remove_reload": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:reload",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:reload": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:reload", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:reload": 0 }
       },
       "trenbankai:add_cycle": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:cycle",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:cycle": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:cycle", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:cycle": 1 }
       },
       "trenbankai:remove_cycle": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:cycle",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:cycle": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:cycle", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:cycle": 0 }
       },
       "trenbankai:add_standby": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:standby",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:standby": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:standby", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:standby": 1 }
       },
       "trenbankai:remove_standby": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:standby",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:standby": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:standby", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:standby": 0 }
       },
       "trenbankai:add_wall_detect": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:wall_detect",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:wall_detect": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:wall_detect", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:wall_detect": 1 }
       },
       "trenbankai:remove_wall_detect": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:wall_detect",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:wall_detect": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:wall_detect", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:wall_detect": 0 }
       },
-      "trenbankai:set_ammo_0": {
-        "set_property": {
-          "trenbankai:ammo": 0
-        }
-      },
-      "trenbankai:set_ammo_1": {
-        "set_property": {
-          "trenbankai:ammo": 1
-        }
-      },
-      "trenbankai:set_ammo_2": {
-        "set_property": {
-          "trenbankai:ammo": 2
-        }
-      },
-      "trenbankai:set_ammo_3": {
-        "set_property": {
-          "trenbankai:ammo": 3
-        }
-      },
-      "trenbankai:set_ammo_4": {
-        "set_property": {
-          "trenbankai:ammo": 4
-        }
-      },
-      "trenbankai:set_ammo_5": {
-        "set_property": {
-          "trenbankai:ammo": 5
-        }
-      },
-      "trenbankai:set_ammo_6": {
-        "set_property": {
-          "trenbankai:ammo": 6
-        }
-      },
-      "trenbankai:set_ammo_7": {
-        "set_property": {
-          "trenbankai:ammo": 7
-        }
-      },
-      "trenbankai:set_ammo_8": {
-        "set_property": {
-          "trenbankai:ammo": 8
-        }
-      },
-      "trenbankai:set_ammo_9": {
-        "set_property": {
-          "trenbankai:ammo": 9
-        }
-      },
-      "trenbankai:set_ammo_10": {
-        "set_property": {
-          "trenbankai:ammo": 10
-        }
-      },
+      "trenbankai:set_ammo_0": { "set_property": { "trenbankai:ammo": 0 } },
+      "trenbankai:set_ammo_1": { "set_property": { "trenbankai:ammo": 1 } },
+      "trenbankai:set_ammo_2": { "set_property": { "trenbankai:ammo": 2 } },
+      "trenbankai:set_ammo_3": { "set_property": { "trenbankai:ammo": 3 } },
+      "trenbankai:set_ammo_4": { "set_property": { "trenbankai:ammo": 4 } },
+      "trenbankai:set_ammo_5": { "set_property": { "trenbankai:ammo": 5 } },
+      "trenbankai:set_ammo_6": { "set_property": { "trenbankai:ammo": 6 } },
+      "trenbankai:set_ammo_7": { "set_property": { "trenbankai:ammo": 7 } },
+      "trenbankai:set_ammo_8": { "set_property": { "trenbankai:ammo": 8 } },
+      "trenbankai:set_ammo_9": { "set_property": { "trenbankai:ammo": 9 } },
+      "trenbankai:set_ammo_10": { "set_property": { "trenbankai:ammo": 10 } },
       "trenbankai:add_hitmark": {
-        "queue_command": {
-          "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 1"]
-        }
+        "queue_command": { "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 1"] }
       },
       "trenbankai:add_hitmark_headshot": {
-        "queue_command": {
-          "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 0.8"]
-        }
+        "queue_command": { "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 0.8"] }
       }
     }
   }

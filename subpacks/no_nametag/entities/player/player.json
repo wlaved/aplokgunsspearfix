@@ -1,12 +1,12 @@
-/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
 {
-  "format_version": "1.21.0",
+  "format_version": "1.21.130",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:player",
       "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": false,
+      "is_experimental": true,
       "scripts": {
         "animate": [
           "root",
@@ -17,9 +17,13 @@
           {
             "charging_spear": "query.has_item_tag('minecraft:is_spear') && query.is_using_item"
           },
-          // Weapons
+          {
+            "first_person_spear_throw": "variable.is_first_person && query.has_item_tag('minecraft:is_spear') && query.is_using_item"
+          },
+          {
+            "third_person_spear_throw": "!variable.is_first_person && query.has_item_tag('minecraft:is_spear') && query.is_using_item"
+          },
           "weapons_setup_controller",
-          // Misc
           "shield_blocking_controller",
           "grounded_controller",
           "nvg_controller"
@@ -80,7 +84,6 @@
         "crawling.legs": "animation.player.crawling.legs",
         "first_person_spear_throw": "animation.player.first_person.spear_throw",
         "third_person_spear_throw": "animation.player.spear_throw",
-        // Weapons
         "weapons_vars_controller": "controller.animation.player.weapons_vars",
         "weapons_setup_controller": "controller.animation.player.weapons_setup",
         "weapons_bullet_counter_controller": "controller.animation.player.weapons_bullet_counter",
@@ -88,60 +91,43 @@
         "weapons_ads_controller": "controller.animation.player.weapons_ads",
         "weapons_standby_controller": "controller.animation.player.weapons_standby",
         "weapons_standby": "animation.weapons.standby",
-        // AK-12
         "ak12_controller": "controller.animation.player.ak12",
         "ak12_reload_empty": "animation.player.ak12_reload_empty",
         "ak12_reload": "animation.player.ak12_reload",
-        // AK-47
         "ak47_controller": "controller.animation.player.ak47",
         "ak47_reload_empty": "animation.player.ak47_reload_empty",
         "ak47_reload": "animation.player.ak47_reload",
-        // AK-74
         "ak74_controller": "controller.animation.player.ak74",
-        // AKM
         "akm_controller": "controller.animation.player.akm",
-        // AKS-47U
         "aks74u_controller": "controller.animation.player.aks74u",
-        // AWP
         "awp_controller": "controller.animation.player.awp",
         "awp_cycle": "animation.player.awp_cycle",
         "awp_reload_empty": "animation.player.awp_reload_empty",
         "awp_reload": "animation.player.awp_reload",
-        // Desert Eagle
         "deagle_controller": "controller.animation.player.deagle",
         "deagle_reload": "animation.player.deagle_reload",
-        // FN Fal
         "fnfal_controller": "controller.animation.player.fnfal",
         "fnfal_reload_empty": "animation.player.fnfal_reload_empty",
         "fnfal_reload": "animation.player.fnfal_reload",
-        // ParaFAL
         "parafal_controller": "controller.animation.player.parafal",
-        // Glocks
         "glock17_controller": "controller.animation.player.glock17",
         "glock18_controller": "controller.animation.player.glock18",
         "glock_reload_empty": "animation.player.glock_reload_empty",
         "glock_reload": "animation.player.glock_reload",
-        // M249
         "m249_controller": "controller.animation.player.m249",
         "m249_reload": "animation.player.m249_reload",
-        // M4A1
         "m4a1_controller": "controller.animation.player.m4a1",
         "m4a1_reload_empty": "animation.player.m4a1_reload_empty",
         "m4a1_reload": "animation.player.m4a1_reload",
-        // Mossberg 500
         "mossberg_controller": "controller.animation.player.mossberg",
         "mossberg_cycle": "animation.player.mossberg_cycle",
         "mossberg_reload": "animation.player.mossberg_reload",
-        // MP5-A5
         "mp5a5_controller": "controller.animation.player.mp5a5",
         "mp5a5_reload": "animation.player.mp5a5_reload",
-        // RPG-7
         "rpg7_controller": "controller.animation.player.rpg7",
         "rpg7_reload": "animation.player.rpg7_reload",
-        // M1014
         "m1014_controller": "controller.animation.player.m1014",
         "m1014_reload": "animation.player.m1014_reload",
-        // Misc
         "shield_blocking_controller": "controller.animation.player.shield_blocking",
         "grounded_controller": "controller.animation.player.grounded",
         "nvg_controller": "controller.animation.player.nvg"
@@ -207,451 +193,452 @@
           "default": 0,
           "range": [0, 1]
         }
-      },
-      "component_groups": {
-        "minecraft:add_raid_omen": {
-          "minecraft:spell_effects": {
-            "add_effects": [
-              {
-                "effect": "raid_omen",
-                "duration": 30,
-                "display_on_screen_animation": true
-              }
-            ],
-            "remove_effects": "bad_omen"
-          },
-          "minecraft:timer": {
-            "time": [0, 0],
-            "looping": false,
-            "time_down_event": {
-              "event": "minecraft:clear_add_raid_omen",
-              "target": "self"
+      }
+    },
+    "component_groups": {
+      "minecraft:add_raid_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "raid_omen",
+              "duration": 30,
+              "display_on_screen_animation": true
             }
-          }
+          ],
+          "remove_effects": "bad_omen"
         },
-        "minecraft:clear_raid_omen_spell_effect": {
-          "minecraft:spell_effects": {}
-        },
-        "minecraft:raid_trigger": {
-          "minecraft:raid_trigger": {
-            "triggered_event": {
-              "event": "minecraft:remove_raid_trigger",
-              "target": "self"
-            }
-          }
-        },
-        "ak12_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_ak12",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "ak47_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_ak47",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "ak74_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_ak74",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "akm_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_akm",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "aks74u_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_aks74u",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "awp_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_awp",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "deagle_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_deagle",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "fnfal_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_fnfal",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "glock_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_glock",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "m249_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_m249",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "m4a1_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_m4a1",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "mossberg_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_mossberg",
-                "num_to_spawn": 8
-              }
-            ]
-          }
-        },
-        "mp5a5_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:bullet",
-                "spawn_event": "trenbankai:bullet_mp5a5",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "rpg7_fire": {
-          "minecraft:spawn_entity": {
-            "entities": [
-              {
-                "min_wait_time": 0,
-                "max_wait_time": 0,
-                "single_use": true,
-                "spawn_entity": "trenbankai:rocket",
-                "spawn_event": "trenbankai:rocket_rpg7",
-                "num_to_spawn": 1
-              }
-            ]
-          }
-        },
-        "default": {
-          "minecraft:knockback_resistance": {
-            "value": 0.25
-          }
-        },
-        "juggernaut": {
-          "minecraft:knockback_resistance": {
-            "value": 100
+        "minecraft:timer": {
+          "time": [0, 0],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_raid_omen",
+            "target": "self"
           }
         }
       },
-      "components": {
-        "minecraft:experience_reward": {
-          "on_death": "math.min(q.player_level * 8, 100)"
-        },
-        "minecraft:type_family": {
-          "family": ["player"]
-        },
-        "minecraft:is_hidden_when_invisible": {},
-        "minecraft:loot": {
-          "table": "loot_tables/empty.json"
-        },
-        "minecraft:collision_box": {
-          "width": 0.6,
-          "height": 1.8
-        },
-        "minecraft:can_climb": {},
-        "minecraft:movement": {
-          "value": 0.1
-        },
-        "minecraft:hurt_on_condition": {
-          "damage_conditions": [
+      "minecraft:clear_raid_omen_spell_effect": {
+        "minecraft:spell_effects": {}
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        }
+      },
+      "ak12_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
             {
-              "filters": {
-                "test": "in_lava",
-                "value": true
-              },
-              "cause": "lava",
-              "damage_per_tick": 4
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_ak12",
+              "num_to_spawn": 1
             }
           ]
-        },
-        "minecraft:attack": {
-          "damage": 1
-        },
-        "minecraft:exhaustion_values": {
-          "heal": 6,
-          "jump": 0.05,
-          "sprint_jump": 0.2,
-          "mine": 0.005,
-          "attack": 0.1,
-          "damage": 0.1,
-          "walk": 0.0,
-          "sprint": 0.1,
-          "swim": 0.01
-        },
-        "minecraft:player.saturation": {
-          "value": 5,
-          "max": 20
-        },
-        "minecraft:player.exhaustion": {
-          "value": 0,
-          "max": 20
-        },
-        "minecraft:player.level": {
-          "value": 0,
-          "max": 24791
-        },
-        "minecraft:player.experience": {
-          "value": 0,
-          "max": 1
-        },
-        "minecraft:breathable": {
-          "total_supply": 15,
-          "suffocate_time": -1,
-          "inhale_time": 3.75,
-          "generates_bubbles": false
-        },
-        "minecraft:nameable": {
-          "always_show": false,
-          "allow_name_tag_renaming": false
-        },
-        "minecraft:physics": {
-          "push_towards_closest_space": true
-        },
-        "minecraft:pushable": {
-          "is_pushable": false,
-          "is_pushable_by_piston": true
-        },
-        "minecraft:insomnia": {
-          "days_until_insomnia": 3
-        },
-        "minecraft:rideable": {
-          "seat_count": 2,
-          "family_types": ["parrot_tame"],
-          "pull_in_entities": true,
-          "seats": [
+        }
+      },
+      "ak47_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
             {
-              "position": [0.4, -0.2, -0.1],
-              "min_rider_count": 0,
-              "max_rider_count": 0,
-              "lock_rider_rotation": 0
-            },
-            {
-              "position": [-0.4, -0.2, -0.1],
-              "min_rider_count": 1,
-              "max_rider_count": 2,
-              "lock_rider_rotation": 0
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_ak47",
+              "num_to_spawn": 1
             }
           ]
-        },
-        "minecraft:conditional_bandwidth_optimization": {},
-        "minecraft:block_climber": {},
-        "minecraft:environment_sensor": {
-          "triggers": [
+        }
+      },
+      "ak74_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
             {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_ak74",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "akm_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_akm",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "aks74u_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_aks74u",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "awp_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_awp",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "deagle_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_deagle",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "fnfal_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_fnfal",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "glock_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_glock",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "m249_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_m249",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "m4a1_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_m4a1",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "mossberg_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_mossberg",
+              "num_to_spawn": 8
+            }
+          ]
+        }
+      },
+      "mp5a5_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:bullet",
+              "spawn_event": "trenbankai:bullet_mp5a5",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "rpg7_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "trenbankai:rocket",
+              "spawn_event": "trenbankai:rocket_rpg7",
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "default": {
+        "minecraft:knockback_resistance": {
+          "value": 0.25
+        }
+      },
+      "juggernaut": {
+        "minecraft:knockback_resistance": {
+          "value": 100
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "math.min(q.player_level * 8, 100)"
+      },
+      "minecraft:type_family": {
+        "family": ["player"]
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {},
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:exhaustion_values": {
+        "heal": 6,
+        "jump": 0.05,
+        "sprint_jump": 0.2,
+        "mine": 0.005,
+        "attack": 0.1,
+        "damage": 0.1,
+        "walk": 0.0,
+        "sprint": 0.1,
+        "swim": 0.01
+      },
+      "minecraft:player.saturation": {
+        "value": 5,
+        "max": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 20
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": false,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+        "push_towards_closest_space": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": ["parrot_tame"],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [0.4, -0.2, -0.1],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [-0.4, -0.2, -0.1],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:block_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_mob_effect",
+                  "subject": "self",
+                  "value": "bad_omen"
+                },
+                {
+                  "test": "is_in_village",
+                  "subject": "self",
+                  "value": true
+                }
+              ]
+            },
+            "event": "minecraft:gain_raid_omen"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_underground",
+                  "value": true
+                },
+                {
+                  "test": "is_underwater",
+                  "value": false
+                }
+              ]
+            },
+            "event": "trenbankai:add_underground"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_underground",
+                  "value": false
+                }
+              ]
+            },
+            "event": "trenbankai:remove_underground"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "value": true
+                }
+              ]
+            },
+            "event": "trenbankai:add_sneaking"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "value": false
+                }
+              ]
+            },
+            "event": "trenbankai:remove_sneaking"
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "value": "trenbankai:juggernaut_chestplate"
+                }
+              ]
+            },
+            "event": "trenbankai:add_juggernaut"
+          },
+          {
+            "filters": {
+              "none_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "torso",
+                  "value": "trenbankai:juggernaut_chestplate"
+                }
+              ]
+            },
+            "event": "trenbankai:remove_juggernaut"
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
               "filters": {
                 "all_of": [
-                  {
-                    "test": "has_mob_effect",
-                    "subject": "self",
-                    "value": "bad_omen"
-                  },
-                  {
-                    "test": "is_in_village",
-                    "subject": "self",
-                    "value": true
-                  }
-                ]
-              },
-              "event": "minecraft:gain_raid_omen"
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_underground",
-                    "value": true
-                  },
-                  {
-                    "test": "is_underwater",
-                    "value": false
-                  }
-                ]
-              },
-              "event": "trenbankai:add_underground"
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_underground",
-                    "value": false
-                  }
-                ]
-              },
-              "event": "trenbankai:remove_underground"
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_sneaking",
-                    "value": true
-                  }
-                ]
-              },
-              "event": "trenbankai:add_sneaking"
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_sneaking",
-                    "value": false
-                  }
-                ]
-              },
-              "event": "trenbankai:remove_sneaking"
-            },
-            {
-              "filters": {
-                "any_of": [
                   {
                     "test": "has_equipment",
                     "domain": "torso",
                     "value": "trenbankai:juggernaut_chestplate"
-                  }
-                ]
-              },
-              "event": "trenbankai:add_juggernaut"
-            },
-            {
-              "filters": {
-                "none_of": [
-                  {
-                    "test": "has_equipment",
-                    "domain": "torso",
-                    "value": "trenbankai:juggernaut_chestplate"
-                  }
-                ]
-              },
-              "event": "trenbankai:remove_juggernaut"
-            }
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "on_damage": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_equipment",
-                      "domain": "torso",
-                      "value": "trenbankai:juggernaut_chestplate"
                   }
                 ]
               }
@@ -731,163 +718,97 @@
           }
         ]
       },
-      // Weapons
       "trenbankai:ak12_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["ak12_fire"]
-            }
-          }
+          { "add": { "component_groups": ["ak12_fire"] } }
         ]
       },
       "trenbankai:ak47_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["ak47_fire"]
-            }
-          }
+          { "add": { "component_groups": ["ak47_fire"] } }
         ]
       },
       "trenbankai:ak74_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["ak74_fire"]
-            }
-          }
+          { "add": { "component_groups": ["ak74_fire"] } }
         ]
       },
       "trenbankai:akm_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["akm_fire"]
-            }
-          }
+          { "add": { "component_groups": ["akm_fire"] } }
         ]
       },
       "trenbankai:aks74u_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["aks74u_fire"]
-            }
-          }
+          { "add": { "component_groups": ["aks74u_fire"] } }
         ]
       },
       "trenbankai:awp_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["awp_fire"]
-            }
-          }
+          { "add": { "component_groups": ["awp_fire"] } }
         ]
       },
       "trenbankai:deagle_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["deagle_fire"]
-            }
-          }
+          { "add": { "component_groups": ["deagle_fire"] } }
         ]
       },
       "trenbankai:fnfal_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["fnfal_fire"]
-            }
-          }
+          { "add": { "component_groups": ["fnfal_fire"] } }
         ]
       },
       "trenbankai:glock_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["glock_fire"]
-            }
-          }
+          { "add": { "component_groups": ["glock_fire"] } }
         ]
       },
       "trenbankai:m249_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["m249_fire"]
-            }
-          }
+          { "add": { "component_groups": ["m249_fire"] } }
         ]
       },
       "trenbankai:m4a1_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["m4a1_fire"]
-            }
-          }
+          { "add": { "component_groups": ["m4a1_fire"] } }
         ]
       },
       "trenbankai:mossberg_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["mossberg_fire"]
-            }
-          }
+          { "add": { "component_groups": ["mossberg_fire"] } }
         ]
       },
       "trenbankai:mp5a5_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["mp5a5_fire"]
-            }
-          }
+          { "add": { "component_groups": ["mp5a5_fire"] } }
         ]
       },
       "trenbankai:rpg7_fire": {
         "sequence": [
           { "set_property": { "trenbankai:weapon_fire": 1 } },
-          {
-            "add": {
-              "component_groups": ["rpg7_fire"]
-            }
-          }
+          { "add": { "component_groups": ["rpg7_fire"] } }
         ]
       },
-      // Misc
       "trenbankai:add_juggernaut": {
-        "remove": {
-          "component_groups": ["default"]
-        },
-        "add": {
-          "component_groups": ["juggernaut"]
-        }
+        "remove": { "component_groups": ["default"] },
+        "add": { "component_groups": ["juggernaut"] }
       },
       "trenbankai:remove_juggernaut": {
-        "remove": {
-          "component_groups": ["juggernaut"]
-        },
-        "add": {
-          "component_groups": ["default"]
-        }
+        "remove": { "component_groups": ["juggernaut"] },
+        "add": { "component_groups": ["default"] }
       },
       "trenbankai:on_death": {
         "queue_command": {
@@ -895,206 +816,73 @@
         }
       },
       "trenbankai:add_underground": {
-        "filters": {
-          "test": "has_tag",
-          "operator": "!=",
-          "value": "underground"
-        },
-        "queue_command": {
-          "command": ["tag @s add underground"]
-        }
+        "filters": { "test": "has_tag", "operator": "!=", "value": "underground" },
+        "queue_command": { "command": ["tag @s add underground"] }
       },
       "trenbankai:remove_underground": {
-        "filters": {
-          "test": "has_tag",
-          "value": "underground"
-        },
-        "queue_command": {
-          "command": ["tag @s remove underground"]
-        }
+        "filters": { "test": "has_tag", "value": "underground" },
+        "queue_command": { "command": ["tag @s remove underground"] }
       },
       "trenbankai:add_sneaking": {
-        "filters": {
-          "test": "has_tag",
-          "operator": "!=",
-          "value": "sneaking"
-        },
-        "queue_command": {
-          "command": ["tag @s add sneaking"]
-        }
+        "filters": { "test": "has_tag", "operator": "!=", "value": "sneaking" },
+        "queue_command": { "command": ["tag @s add sneaking"] }
       },
       "trenbankai:remove_sneaking": {
-        "filters": {
-          "test": "has_tag",
-          "value": "sneaking"
-        },
-        "queue_command": {
-          "command": ["tag @s remove sneaking"]
-        }
+        "filters": { "test": "has_tag", "value": "sneaking" },
+        "queue_command": { "command": ["tag @s remove sneaking"] }
       },
       "trenbankai:add_reload_empty": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:reload",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:reload": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:reload", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:reload": 1 }
       },
       "trenbankai:add_reload": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:reload",
-          "operator": "!=",
-          "value": 2
-        },
-        "set_property": {
-          "trenbankai:reload": 2
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:reload", "operator": "!=", "value": 2 },
+        "set_property": { "trenbankai:reload": 2 }
       },
       "trenbankai:remove_reload": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:reload",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:reload": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:reload", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:reload": 0 }
       },
       "trenbankai:add_cycle": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:cycle",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:cycle": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:cycle", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:cycle": 1 }
       },
       "trenbankai:remove_cycle": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:cycle",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:cycle": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:cycle", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:cycle": 0 }
       },
       "trenbankai:add_standby": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:standby",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:standby": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:standby", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:standby": 1 }
       },
       "trenbankai:remove_standby": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:standby",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:standby": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:standby", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:standby": 0 }
       },
       "trenbankai:add_wall_detect": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:wall_detect",
-          "operator": "!=",
-          "value": 1
-        },
-        "set_property": {
-          "trenbankai:wall_detect": 1
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:wall_detect", "operator": "!=", "value": 1 },
+        "set_property": { "trenbankai:wall_detect": 1 }
       },
       "trenbankai:remove_wall_detect": {
-        "filters": {
-          "test": "int_property",
-          "domain": "trenbankai:wall_detect",
-          "operator": "!=",
-          "value": 0
-        },
-        "set_property": {
-          "trenbankai:wall_detect": 0
-        }
+        "filters": { "test": "int_property", "domain": "trenbankai:wall_detect", "operator": "!=", "value": 0 },
+        "set_property": { "trenbankai:wall_detect": 0 }
       },
-      "trenbankai:set_ammo_0": {
-        "set_property": {
-          "trenbankai:ammo": 0
-        }
-      },
-      "trenbankai:set_ammo_1": {
-        "set_property": {
-          "trenbankai:ammo": 1
-        }
-      },
-      "trenbankai:set_ammo_2": {
-        "set_property": {
-          "trenbankai:ammo": 2
-        }
-      },
-      "trenbankai:set_ammo_3": {
-        "set_property": {
-          "trenbankai:ammo": 3
-        }
-      },
-      "trenbankai:set_ammo_4": {
-        "set_property": {
-          "trenbankai:ammo": 4
-        }
-      },
-      "trenbankai:set_ammo_5": {
-        "set_property": {
-          "trenbankai:ammo": 5
-        }
-      },
-      "trenbankai:set_ammo_6": {
-        "set_property": {
-          "trenbankai:ammo": 6
-        }
-      },
-      "trenbankai:set_ammo_7": {
-        "set_property": {
-          "trenbankai:ammo": 7
-        }
-      },
-      "trenbankai:set_ammo_8": {
-        "set_property": {
-          "trenbankai:ammo": 8
-        }
-      },
-      "trenbankai:set_ammo_9": {
-        "set_property": {
-          "trenbankai:ammo": 9
-        }
-      },
-      "trenbankai:set_ammo_10": {
-        "set_property": {
-          "trenbankai:ammo": 10
-        }
-      },
+      "trenbankai:set_ammo_0": { "set_property": { "trenbankai:ammo": 0 } },
+      "trenbankai:set_ammo_1": { "set_property": { "trenbankai:ammo": 1 } },
+      "trenbankai:set_ammo_2": { "set_property": { "trenbankai:ammo": 2 } },
+      "trenbankai:set_ammo_3": { "set_property": { "trenbankai:ammo": 3 } },
+      "trenbankai:set_ammo_4": { "set_property": { "trenbankai:ammo": 4 } },
+      "trenbankai:set_ammo_5": { "set_property": { "trenbankai:ammo": 5 } },
+      "trenbankai:set_ammo_6": { "set_property": { "trenbankai:ammo": 6 } },
+      "trenbankai:set_ammo_7": { "set_property": { "trenbankai:ammo": 7 } },
+      "trenbankai:set_ammo_8": { "set_property": { "trenbankai:ammo": 8 } },
+      "trenbankai:set_ammo_9": { "set_property": { "trenbankai:ammo": 9 } },
+      "trenbankai:set_ammo_10": { "set_property": { "trenbankai:ammo": 10 } },
       "trenbankai:add_hitmark": {
-        "queue_command": {
-          "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 1"]
-        }
+        "queue_command": { "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 1"] }
       },
       "trenbankai:add_hitmark_headshot": {
-        "queue_command": {
-          "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 0.8"]
-        }
+        "queue_command": { "command": ["playsound effect.player.hitmarker @s ~~~ 0.65 0.8"] }
       }
     }
   }
