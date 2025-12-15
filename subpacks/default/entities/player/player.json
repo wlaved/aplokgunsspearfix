@@ -9,6 +9,20 @@
       "is_summonable": false,
       "scripts": {
         "animate": [
+          // Vanilla
+          "root",
+          "humanoid_base_pose",
+          "look_at_target",
+          "move",
+          "riding",
+          "holding",
+          "first_person_holding",
+          "attack",
+          "sneaking",
+          "swimming",
+          "use_item_progress",
+          "sleeping",
+          "bob",
           // Weapons
           "weapons_setup_controller",
           // Misc
@@ -18,6 +32,32 @@
         ]
       },
       "animations": {
+        // Vanilla
+        "root": "controller.animation.humanoid.root",
+        "humanoid_base_pose": "controller.animation.humanoid.base_pose",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "move": "controller.animation.humanoid.move",
+        "riding": "controller.animation.humanoid.riding",
+        "holding": "controller.animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "sneaking": "controller.animation.humanoid.sneaking",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+        "swimming": "controller.animation.humanoid.swimming",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "sleeping": "controller.animation.humanoid.sleeping",
+        "first_person_holding": "controller.animation.player.first_person_holding",
+        "first_person_empty_hand": "animation.player.first_person.empty_hand",
+        "first_person_attack_controller": "controller.animation.player.first_person_attack",
+        "first_person_swap_item": "animation.player.first_person.swap_item",
+        "first_person_shield_block": "animation.player.first_person.shield_block",
+        "first_person_map_controller": "controller.animation.player.first_person_map",
+        "first_person_crossbow_equipped": "animation.player.first_person.crossbow_equipped",
+        "first_person_breathing_bob": "animation.player.first_person.breathing_bob",
+        "attack": "controller.animation.humanoid.attack",
         // Weapons
         "weapons_vars_controller": "controller.animation.player.weapons_vars",
         "weapons_setup_controller": "controller.animation.player.weapons_setup",
