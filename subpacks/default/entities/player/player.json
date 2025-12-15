@@ -9,44 +9,41 @@
       "is_summonable": false,
       "scripts": {
         "animate": [
-          // Vanilla
           "root",
           "humanoid_base_pose",
           "look_at_target",
-          "move",
-          "riding",
-          "holding",
+          "move_controller",
+          "riding_controller",
+          "holding_controller",
           "first_person_holding",
+          "first_person_attack_controller",
           "attack",
-          "sneaking",
-          "swimming",
+          "sneaking_controller",
+          "swimming_controller",
           "use_item_progress",
           "sleeping",
           "bob",
-          // Weapons
           "weapons_setup_controller",
-          // Misc
           "shield_blocking_controller",
           "grounded_controller",
           "nvg_controller"
         ]
       },
       "animations": {
-        // Vanilla
         "root": "controller.animation.humanoid.root",
         "humanoid_base_pose": "controller.animation.humanoid.base_pose",
         "look_at_target": "controller.animation.humanoid.look_at_target",
-        "move": "controller.animation.humanoid.move",
-        "riding": "controller.animation.humanoid.riding",
-        "holding": "controller.animation.humanoid.holding",
+        "move_controller": "controller.animation.humanoid.move",
+        "riding_controller": "controller.animation.humanoid.riding",
+        "holding_controller": "controller.animation.humanoid.holding",
         "brandish_spear": "animation.humanoid.brandish_spear",
         "charging": "animation.humanoid.charging",
         "attack.rotations": "animation.humanoid.attack.rotations",
-        "sneaking": "controller.animation.humanoid.sneaking",
+        "sneaking_controller": "controller.animation.humanoid.sneaking",
         "bob": "animation.humanoid.bob",
         "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
         "bow_and_arrow": "animation.humanoid.bow_and_arrow",
-        "swimming": "controller.animation.humanoid.swimming",
+        "swimming_controller": "controller.animation.humanoid.swimming",
         "use_item_progress": "animation.humanoid.use_item_progress",
         "sleeping": "controller.animation.humanoid.sleeping",
         "first_person_holding": "controller.animation.player.first_person_holding",
@@ -58,7 +55,6 @@
         "first_person_crossbow_equipped": "animation.player.first_person.crossbow_equipped",
         "first_person_breathing_bob": "animation.player.first_person.breathing_bob",
         "attack": "controller.animation.humanoid.attack",
-        // Weapons
         "weapons_vars_controller": "controller.animation.player.weapons_vars",
         "weapons_setup_controller": "controller.animation.player.weapons_setup",
         "weapons_bullet_counter_controller": "controller.animation.player.weapons_bullet_counter",
@@ -66,60 +62,43 @@
         "weapons_ads_controller": "controller.animation.player.weapons_ads",
         "weapons_standby_controller": "controller.animation.player.weapons_standby",
         "weapons_standby": "animation.weapons.standby",
-        // AK-12
         "ak12_controller": "controller.animation.player.ak12",
         "ak12_reload_empty": "animation.player.ak12_reload_empty",
         "ak12_reload": "animation.player.ak12_reload",
-        // AK-47
         "ak47_controller": "controller.animation.player.ak47",
         "ak47_reload_empty": "animation.player.ak47_reload_empty",
         "ak47_reload": "animation.player.ak47_reload",
-        // AK-74
         "ak74_controller": "controller.animation.player.ak74",
-        // AKM
         "akm_controller": "controller.animation.player.akm",
-        // AKS-47U
         "aks74u_controller": "controller.animation.player.aks74u",
-        // AWP
         "awp_controller": "controller.animation.player.awp",
         "awp_cycle": "animation.player.awp_cycle",
         "awp_reload_empty": "animation.player.awp_reload_empty",
         "awp_reload": "animation.player.awp_reload",
-        // Desert Eagle
         "deagle_controller": "controller.animation.player.deagle",
         "deagle_reload": "animation.player.deagle_reload",
-        // FN Fal
         "fnfal_controller": "controller.animation.player.fnfal",
         "fnfal_reload_empty": "animation.player.fnfal_reload_empty",
         "fnfal_reload": "animation.player.fnfal_reload",
-        // ParaFAL
         "parafal_controller": "controller.animation.player.parafal",
-        // Glocks
         "glock17_controller": "controller.animation.player.glock17",
         "glock18_controller": "controller.animation.player.glock18",
         "glock_reload_empty": "animation.player.glock_reload_empty",
         "glock_reload": "animation.player.glock_reload",
-        // M249
         "m249_controller": "controller.animation.player.m249",
         "m249_reload": "animation.player.m249_reload",
-        // M4A1
         "m4a1_controller": "controller.animation.player.m4a1",
         "m4a1_reload_empty": "animation.player.m4a1_reload_empty",
         "m4a1_reload": "animation.player.m4a1_reload",
-        // Mossberg 500
         "mossberg_controller": "controller.animation.player.mossberg",
         "mossberg_cycle": "animation.player.mossberg_cycle",
         "mossberg_reload": "animation.player.mossberg_reload",
-        // MP5-A5
         "mp5a5_controller": "controller.animation.player.mp5a5",
         "mp5a5_reload": "animation.player.mp5a5_reload",
-        // RPG-7
         "rpg7_controller": "controller.animation.player.rpg7",
         "rpg7_reload": "animation.player.rpg7_reload",
-        // M1014
         "m1014_controller": "controller.animation.player.m1014",
         "m1014_reload": "animation.player.m1014_reload",
-        // Misc
         "shield_blocking_controller": "controller.animation.player.shield_blocking",
         "grounded_controller": "controller.animation.player.grounded",
         "nvg_controller": "controller.animation.player.nvg"
