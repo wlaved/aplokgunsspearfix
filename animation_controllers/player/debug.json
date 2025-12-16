@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.debug": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "attacking": "variable.attack_time > 0" },
+            { "using_item": "query.is_using_item" }
+          ]
+        },
+        "attacking": {
+          "on_entry": ["/title @s actionbar Attacking!"],
+          "transitions": [ { "default": "variable.attack_time <= 0" } ]
+        },
+        "using_item": {
+           "on_entry": ["/title @s actionbar Using Item!"],
+           "transitions": [ { "default": "!query.is_using_item" } ]
+        }
+      }
+    }
+  }
+}
