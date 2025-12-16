@@ -8,6 +8,9 @@
       "is_spawnable": false,
       "is_summonable": false,
       "scripts": {
+        "pre_animation": [
+          "variable.first_person_item_rotation_factor = variable.attack_time;"
+        ],
         "animate": [
           "root",
           "humanoid_base_pose",

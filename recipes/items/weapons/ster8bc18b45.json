@@ -6,7 +6,7 @@
       "identifier": "trenbankai:glock18"
     },
     "tags": ["weapon_workbench"],
-    "pattern": ["A C", " B ", "D  "],
+    "pattern": ["C A", " B ", "  D"],
     "key": {
       "A": {
         "item": "trenbankai:barrel_medium"
