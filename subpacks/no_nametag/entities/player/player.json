@@ -8,6 +8,10 @@
       "is_spawnable": false,
       "is_summonable": false,
       "scripts": {
+        "initialize": [
+          "variable.first_person_item_rotation_factor = 0.0;",
+          "variable.attack_time = 0.0;"
+        ],
         "pre_animation": [
           "variable.first_person_item_rotation_factor = variable.attack_time;"
         ],

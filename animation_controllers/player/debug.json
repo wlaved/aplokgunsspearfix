@@ -5,6 +5,7 @@
       "initial_state": "default",
       "states": {
         "default": {
+          "on_entry": ["/title @s actionbar Debug: Init"],
           "transitions": [
             { "attacking": "variable.attack_time > 0" },
             { "using_item": "query.is_using_item" }
