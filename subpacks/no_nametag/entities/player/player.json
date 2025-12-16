@@ -55,7 +55,7 @@
         "use_item_progress": "animation.humanoid.use_item_progress",
         "sleeping": "controller.animation.humanoid.sleeping",
         "first_person_holding": "controller.animation.player.first_person_holding",
-        "first_person_empty_hand": "animation.player.first_person.empty_hand",
+        "first_person_empty_hand": "animation.humanoid.base_pose",
         "first_person_attack_rotation": "animation.player.attack.rotations",
         "first_person_attack_position": "animation.player.attack.positions",
         "first_person_attack_controller": "controller.animation.player.first_person_attack",
