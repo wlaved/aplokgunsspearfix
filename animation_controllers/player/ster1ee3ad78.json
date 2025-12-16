@@ -43,6 +43,29 @@
           "on_exit": ["/tag @s remove is_grounded"]
         }
       }
+    },
+    "controller.animation.player.custom_first_person_attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "attacking": "variable.attack_time > 0"
+            }
+          ]
+        },
+        "attacking": {
+          "animations": [
+            "first_person_attack_rotation",
+            "first_person_attack_position"
+          ],
+          "transitions": [
+            {
+              "default": "variable.attack_time <= 0"
+            }
+          ]
+        }
+      }
     }
   }
 }
