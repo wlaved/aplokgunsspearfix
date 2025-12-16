@@ -17,8 +17,6 @@
           "holding_controller",
           "first_person_holding",
           "first_person_map_controller",
-          "first_person_attack_controller",
-          "attack",
           "sneaking_controller",
           "swimming_controller",
           "use_item_progress",
@@ -30,7 +28,9 @@
           "weapons_setup_controller",
           "shield_blocking_controller",
           "grounded_controller",
-          "nvg_controller"
+          "nvg_controller",
+          "first_person_attack_controller",
+          "attack"
         ]
       },
       "animations": {
@@ -52,6 +52,8 @@
         "sleeping": "controller.animation.humanoid.sleeping",
         "first_person_holding": "controller.animation.player.first_person_holding",
         "first_person_empty_hand": "animation.player.first_person.empty_hand",
+        "first_person_attack_rotation": "animation.player.attack.rotations",
+        "first_person_attack_position": "animation.player.attack.positions",
         "first_person_attack_controller": "controller.animation.player.first_person_attack",
         "first_person_swap_item": "animation.player.first_person.swap_item",
         "first_person_shield_block": "animation.player.first_person.shield_block",
