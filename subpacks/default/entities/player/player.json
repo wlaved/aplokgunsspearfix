@@ -8,13 +8,6 @@
       "is_spawnable": false,
       "is_summonable": false,
       "scripts": {
-        "initialize": [
-          "variable.first_person_item_rotation_factor = 0.0;",
-          "variable.attack_time = 0.0;"
-        ],
-        "pre_animation": [
-          "variable.first_person_item_rotation_factor = variable.attack_time;"
-        ],
         "animate": [
           "root",
           "humanoid_base_pose",
@@ -39,12 +32,10 @@
           "grounded_controller",
           "nvg_controller",
           "first_person_attack_controller",
-          "attack",
-          "debug_controller"
+          "attack"
         ]
       },
       "animations": {
-        "debug_controller": "controller.animation.player.debug",
         "root": "controller.animation.humanoid.root",
         "humanoid_base_pose": "controller.animation.humanoid.base_pose",
         "look_at_target": "controller.animation.humanoid.look_at_target",
@@ -65,8 +56,8 @@
         "sleeping": "controller.animation.humanoid.sleeping",
         "first_person_holding": "controller.animation.player.first_person_holding",
         "first_person_empty_hand": "animation.humanoid.holding",
-        "first_person_attack_rotation": "animation.player.first_person.attack_rotation",
-        "first_person_attack_position": "animation.player.first_person.attack_rotation",
+        "first_person_attack_rotation": "animation.humanoid.attack.rotations",
+        "first_person_attack_position": "animation.humanoid.attack.rotations",
         "first_person_attack_controller": "controller.animation.player.first_person_attack",
         "first_person_swap_item": "animation.player.first_person.swap_item",
         "first_person_shield_block": "animation.player.first_person.shield_block",
