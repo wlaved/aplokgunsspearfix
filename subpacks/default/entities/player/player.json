@@ -23,11 +23,15 @@
           "bob",
           { "brandish_spear": "query.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident', 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') || query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear')" },
           { "charging": "(query.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident', 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear', 'minecraft:copper_spear') || query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear')) && query.is_using_item" },
+          "crossbow_controller",
+          "throwable_controller",
+          "throwable_aim_controller",
           "weapons_setup_controller",
           "shield_blocking_controller",
           "grounded_controller",
           "nvg_controller",
-          "custom_attack_controller"
+          "first_person_attack_controller",
+          "attack"
         ]
       },
       "animations": {
