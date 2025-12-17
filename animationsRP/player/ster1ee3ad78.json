@@ -379,7 +379,11 @@
       "loop": true,
       "bones": {
         "rightArm": {
-          "rotation": ["variable.attack_time * -100.0", "variable.attack_time * -20.0", 0.0]
+          "rotation": [
+            "variable.attack_time * -100.0",
+            "variable.attack_time * -20.0",
+            0.0
+          ]
         }
       }
     },
@@ -387,7 +391,16 @@
       "loop": true,
       "bones": {
         "rightArm": {
-          "rotation": [0, 0, 0]
+          "rotation": [
+            "query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear') ? 30 : (query.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident') ? 10 : 0)",
+            "query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear') ? 60 : (query.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident') ? 5 : 0)",
+            "query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear') ? -10 : 0"
+          ],
+          "position": [
+            "query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear') ? 5 : 0",
+            "query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear') ? -5 : 0",
+            "query.has_item_tag('slot.weapon.mainhand', 'minecraft:is_spear') ? 5 : 0"
+          ]
         }
       }
     }
