@@ -1,0 +1,31 @@
+/* Copyright 2025 <FireWave Interactive>. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. You may not use this work for commercial purposes, and you may not alter, transform, or build upon this work. For more details, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ */
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.grenade.item": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": ["texture.default"]
+    },
+    "controller.render.grenade.entity": {
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": ["texture.default"],
+      "part_visibility": [
+        {
+          "pin": false
+        }
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    }
+  }
+}
