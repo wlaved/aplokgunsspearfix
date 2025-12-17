@@ -371,7 +371,7 @@
         }
       }
     },
-    "animation.player.fix_crash": {
+    "animation.player.first_person.base_pose": {
       "loop": true,
       "anim_time_update": "variable.first_person_item_rotation_factor = 0.0;"
     }

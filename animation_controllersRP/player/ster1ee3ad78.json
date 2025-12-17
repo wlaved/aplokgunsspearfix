@@ -515,7 +515,6 @@
       "states": {
         "first_person": {
           "animations": [
-            "animation.player.fix_crash",
             {
               "first_person_swap_item": "!q.blocking"
             },
